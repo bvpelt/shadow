@@ -13,17 +13,28 @@
   <script>
     customElements.define('dso-view', class extends HTMLElement {
       connectedCallback() {
-        const shadow = this.attachShadow({ mode: 'open' });
-        shadow.innerHTML = `<p>
-      Hello, ${this.getAttribute('name')}
-    </p>`;
+        var shadow = null;
+
+        const url = 'http://localhost:3001'; // angular starter app
+        fetch(url)
+          .then(response => response.text())
+          .then(html => {
+            shadow = this.attachShadow({ mode: 'open' }); // container is just a div
+            shadow.innerHTML = html;
+
+            //shadow.appendChild(html);
+            console.log('Appended child to shadow: ' + html);
+          });
       }
     });
 
 
+
   </script>
   <app-root></app-root>
-  <dso-view name="Pieter"></dso-view>
+  <div>
+    <dso-view name="Pieter"></dso-view>
+  </div>
 </body>
 
 </html>
