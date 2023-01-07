@@ -11,6 +11,7 @@
 
 <body>
   <script>
+
     function parseHTML(html) {
       var t = document.createElement('template');
       t.innerHTML = html;
@@ -25,40 +26,23 @@
           const url = this.getAttribute('url');
 
           shadow = this.attachShadow({ mode: 'open' }); // container is just a div
-          shadow.innerHTML = "<app-root></app-root>";
-          //shadow.appendChild(html);
-
-
-          //            shadow.append(html);
-
-          //var your_html_element = parseHTML(html);
-          //shadow.appendChild(your_html_element);
-          //shadow.append(json);
-          //console.log('Appended child to shadow: ' + json);
+          shadow.innerHTML = "<app-root class='dso'></app-root>";
 
           var tag = document.createElement('script');
           tag.src = url + "/runtime.971b49795bf37ec0.js";
           tag.defer = true;
           shadow.append(tag);
 
-          //              tag = document.createElement('script');
-          //              tag.src = url + "/polyfills-es5.1a4928232678b73b212e.js";
-          //              tag.nomodule = true;
-          //              tag.defer = true;
-          //              shadow.append(tag);
 
           tag = document.createElement('script');
           tag.src = url + "/polyfills.198f79c3c673d0f7.js";
           tag.defer = true;
           shadow.append(tag)
 
-          //              tag = document.createElement('script');
-          //              tag.src = url + "/scripts.cb9c1c75fdd88cce0ad3.js";
-          //              tag.defer = true;
-          //              shadow.append(tag)
+
 
           tag = document.createElement('script');
-          tag.src = url + "/main.5a4d27717359b7bd.js";
+          tag.src = url + "/main.c3631db9343791d3.js";
           tag.defer = true;
           shadow.append(tag)
 
@@ -135,10 +119,8 @@
       });
 
   </script>
-  <app-root></app-root>
-
-  <dso-view url="http://localhost:8080/"></dso-view>
-
+  <app-root>
+  </app-root>
 </body>
 
 </html>
