@@ -26,24 +26,27 @@
           const url = this.getAttribute('url');
 
           shadow = this.attachShadow({ mode: 'open' }); // container is just a div
-          shadow.innerHTML = "<app-root></app-root>";
+          //shadow.innerHTML = "<app-root></app-root>";
 
           var tag = document.createElement('script');
           tag.src = url + "runtime.971b49795bf37ec0.js";
           tag.defer = true;
+          tag.nomodule = true;
           shadow.append(tag);
 
 
           tag = document.createElement('script');
           tag.src = url + "polyfills.198f79c3c673d0f7.js";
           tag.defer = true;
+          tag.nomodule = true;
           shadow.append(tag)
 
 
 
           tag = document.createElement('script');
-          tag.src = url + "main.c3631db9343791d3.js";
+          tag.src = url + "main.110cbecba78bb2f0.js";
           tag.defer = true;
+          tag.nomodule = true;
           shadow.append(tag)
 
           console.log(shadow.innerHTML);
@@ -52,9 +55,18 @@
       });
 
   </script>
-  <dso-app-root></dso-app-root>
-  <app-root></app-root>
-  <dso-view url="http://localhost:8080/"></dso-view>
+  <div style="display: flex; flex-direction: row;">
+    <div style="width: 50vw;" id="root">
+      <dso-app-root></dso-app-root>
+    </div>
+    <div>
+      <app-root></app-root>
+      <dso-view url="http://localhost:8080/">
+
+      </dso-view>
+    </div>
+
+  </div>
 </body>
 
 </html>
