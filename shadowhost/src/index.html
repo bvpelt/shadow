@@ -29,14 +29,14 @@
           //shadow.innerHTML = "<app-root></app-root>";
 
           var tag = document.createElement('script');
-          tag.src = url + "runtime.971b49795bf37ec0.js";
+          tag.src = url + "runtime.d59f896680daac16.js";
           tag.defer = true;
           tag.nomodule = true;
           shadow.append(tag);
 
 
           tag = document.createElement('script');
-          tag.src = url + "polyfills.198f79c3c673d0f7.js";
+          tag.src = url + "polyfills.0b1c1c7c95ea728a.js";
           tag.defer = true;
           tag.nomodule = true;
           shadow.append(tag)
@@ -44,7 +44,7 @@
 
 
           tag = document.createElement('script');
-          tag.src = url + "main.110cbecba78bb2f0.js";
+          tag.src = url + "main.aa1858aa5bd35e98.js";
           tag.defer = true;
           tag.nomodule = true;
           shadow.append(tag)
@@ -55,17 +55,15 @@
       });
 
   </script>
-  <div style="display: flex; flex-direction: row;">
-    <div style="width: 50vw;" id="root">
+  <div>
+    <div>
       <dso-app-root></dso-app-root>
     </div>
     <div>
       <app-root></app-root>
-      <dso-view url="http://localhost:8080/">
-
+      <dso-view url="https://preprod.viewer.dso.kadaster.nl/">
       </dso-view>
     </div>
-
   </div>
 </body>
 
